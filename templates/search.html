@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block content %}
+  <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6">
+          <form class="" action="" method="post">
+            {% csrf_token %}
+              {{form|bootstrap}}
+            <input class="btn btn-info" type="submit" name="profile" value="Search Content">
+          </form>
+        </div>
+        <div class="col-lg-3">
+        </div>
+      </div>
+    </div>
+{% endblock %}

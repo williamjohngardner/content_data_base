@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load bootstrap %}
+
+{% block content %}
+<br>
+  <div class="container">
+    <!-- Beginning of File Entry Widget -->
+    <div class="row">
+      <div class="col-lg-3">
+      </div>
+      <div class="col-lg-6">
+        <form role="form" action="{% url 'index_view' %}" method="post">
+            <legend>Create A New File</legend>
+              {% csrf_token %}
+                {{ form|bootstrap }}
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Create File"></input>
+              </div>
+          </form>
+      </div>
+      <div class="col-lg-3">
+      </div>
+      <!-- End of File Entry Widget -->
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <legend>Category List</legend>
+        {% for category in categories %}
+          {{ category.category }} &nbsp&nbsp&nbsp
+        {% endfor %}
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-12">
+        <legend>Tag List</legend>
+        {% for tag in tags %}
+          {{ tag.tag }} &nbsp&nbsp&nbsp
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

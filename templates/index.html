@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+      </div>
+      <div class="col-lg-3">
+        <a type="button" class="btn btn-primary" name="button" href="{% url 'create_file_view' %}">Create New File</a>
+      </div>
+      <div class="col-lg-3">
+        <a type="button" class="btn btn-info" name="button" href="{% url 'search_file_view' %}">Search Files</a>
+      </div>
+      <div class="col-lg-3">
+      </div>
+    </div>
+  </div>
+{% endblock %}
