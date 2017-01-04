@@ -20,8 +20,8 @@ class File(models.Model):
     content = models.FileField(upload_to='content_files', null=True, blank=True)
     category = models.ForeignKey('Category', null=True, blank=True)
     tag = models.ManyToManyField('Tag', blank=True)
-    author = models.CharField(max_length=50)
-    vendor = models.CharField(max_length=75)
+    # author = models.CharField(max_length=50)
+    # vendor = models.CharField(max_length=75)
 
     def __str__(self):
         return self.name

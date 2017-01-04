@@ -30,5 +30,6 @@ class SearchFileView(FormView):
         search = form.save(commit=False)
         return super().form_valid(form)
 
-    def search(self, form):
-        pass
+    def get_context_data(self, form):
+        context = super(SearchFileView, self).get_context_data(**kwargs)
+        context["file"] = File.objects.filter()
